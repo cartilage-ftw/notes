@@ -1,0 +1,96 @@
+\documentclass{article}
+
+\usepackage[margin=1.0in]{geometry}
+
+\author{Aayush Arya \\ (tomriddle257@gmail.com)}
+\title{Introduction to Ordinary Differential Equations}
+\begin{document}
+	\maketitle
+	
+	\section*{Introduction}
+	When we solve an algebraic equation $3x + 5 = 8$, we seek a number. The purpose of solving a differential equation such as
+	$$ \frac{d^2x}{dt^2} = -\frac{k}{m}x$$
+	
+	the goal is to find a function x(t) that satisfies it.
+	
+	A differential equation of a function y(x) has the general form
+	$$ f(x, y(x), y'(x), y''(x), ..., y^n(x)) = 0$$
+	
+	\section*{Nature of Solutions}
+	For a differential equation
+		$$ y'' + 2y' + 5 = 0$$
+		if $y = g(x)$ and $y = h(x)$ are two solutions of the differential equations, then a linear combination of these, i.e.,
+		$$ y = c_1g(x) + c_2h(x) $$
+		is also a solution.\\
+		
+	A differential equation of order $n$ has $n$ independent solutions. We can form a general solution of the differential equation using a linear combination of the independent solutions. \textit{Picard's Existence and Uniqueness Theorem} helps us figure out that our general solution is complete and no other solutions are left.\\ But how do we know that we have found a solution? The hallmark sign is that no derivatives of $y$ will be left in the equation.
+	The equation will relate $y$ with $x$ at least implicitly.
+	
+	\section*{Geometric interpretation}
+	The geometric interpretation of differential equations is easier to see for linear equations.\\
+	A differential equation of the form
+	\begin{equation}
+	\frac{dy}{dx} = f(x,y)
+	\end{equation}
+	can be interpreted as a set of vectors pointing towards (1, $\frac{dy}{dx}$) at every point (x,y) in the plane.% \footnote{See Chapter 1 of Simmons-Krantz}
+	\\
+	Consider the differential equation
+	$$ y''(x) = 0 $$
+	Solving this gives
+	$$ y' = c_1 $$
+	$$ y = c_1x + c_2 $$
+	Which looks like the familiar equation $y = mx + c$. We note that these arbitrary constants can take up any value. So the equation doesn't represent 'a' straight line but a family of straight lines (of having all possible slope values and y-intercepts).
+	
+	\section*{Exact Differential Equations}
+	An exact or total differential of a function $\psi(x,y)$ is one which shows the contribution of all independent variables for an infinitesimal change
+	\begin{equation}
+	d\psi = \frac{\partial\psi}{\partial x}dx + \frac{\partial\psi}{\partial y}dy
+	\end{equation}
+	A differential equation
+	$$M(x,y)dx + N(x,y)dy = 0$$ is exact if it can be represented as the exact differential of some function $\psi (x,y)$ where $d\psi (x,y) = 0$
+	\\
+	That is,
+	$$M = \frac{\partial\psi}{\partial x} $$ and $$N = \frac{\partial\psi}{\partial y} $$
+	A natural question arises: it would be easy to check the exactness for trivial expressions. Can we write a criterion that assures the exactness of the equation?\\
+	
+	The equation is exact if
+	$$ \frac{\partial M}{\partial y} = \frac{\partial N}{\partial x}$$
+	because, if we substitute the expressions for M and Y as partial derivatives of $\psi$, the criterion becomes
+	
+	$$\frac{\partial^2\psi}{\partial y \partial x} = \frac{\partial^2\psi}{\partial x \partial y}$$
+	
+	If the equation is exact, it is easy to see that if $d\psi=0$, the solution is just $\psi = constant$
+	
+	To find $\psi$, we first integrate M(x,y)
+	
+	$$\psi = \int \frac{\partial \psi}{\partial x}dx + f(y)$$
+	The constant of integration is a function of y alone. This can be justified by intuition, because if we take the partial derivative of $\psi$ with respect to x, the terms containing functions of y alone would have vanished. We'd like to bring those back.
+	\\
+	
+	A more rigorous proof for this justification is as follows\\
+	
+	As we said before,
+	$$ N(x,y) = \frac{\partial\psi}{\partial y}$$
+	
+	substituting the value of $\psi$ from the equation above
+	 
+	$$ N(x,y) = \frac{\partial\psi}{\partial y} \left(\int \frac{\partial \psi}{\partial x}dx + f(y)\right) $$
+	
+	taking the partial derivative and transposing for f'(y)
+	
+	$$ f'(y) = N(x,y) - \frac{\partial\psi}{\partial y} \left(\int \frac{\partial \psi}{\partial x}dx\right) $$
+	
+	taking the partial derivate with respect to x leaves us with
+	
+	$$ \frac{\partial f'(y)}{\partial x} = \frac{\partial N}{\partial x} - \frac{\partial^2 }{\partial x \partial y}\left(\int \frac{\partial \psi}{\partial x}dx \right) $$
+	
+	which on simplifying, becomes
+	
+	$$ \frac{\partial f'(y)}{\partial x} = \frac{\partial N}{\partial x} - \frac{\partial M}{\partial y} $$
+	
+	from the condition of exactness, we know that the R.H.S. is zero. Therefore
+	
+	$$f'(y) = C$$
+	
+	which means $f(y)$ is some function of y alone.
+\end{document}
