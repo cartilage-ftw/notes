@@ -1,5 +1,7 @@
 \documentclass{article}
 
+\usepackage[margin=1.0in]{geometry}
+
 \usepackage{array,epsfig}
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -28,10 +30,10 @@
 	
 	Electrical charges can only be multiples of $e$ \textemdash the charge of an electron. Up and down quarks have charges with values as fractions of $e$, \textit{quantum chromodynamics} suggests that it is impossible to liberate a single quark from a hadron.\\
 	
-	Charge of a proton happens to be equal to that of an electron \\ J.G. King (1960) edid an experiment to confirm it. He took ~17 grams of $H_2$ gas \textemdash which consists of 2 protons and 2 electrons \textemdash  compressed into a container electrically insulated from its surroundings. The gas was allowed to escape in a way that ions could not accompany.\\
+	Charge of a proton happens to be equal to that of an electron \\ J.G. King (1960) did an experiment to confirm it. He took ~17 grams of $H_2$ gas \textemdash which consists of 2 protons and 2 electrons \textemdash  compressed into a container electrically insulated from its surroundings. The gas was allowed to escape in a way that ions could not accompany.\\
 	If the charge on a proton were to differ even by one part in $10^{20}$, the difference made by the absence of the ~$5\times 10^{24}$ hydrogen molecules would have made a difference of $5\times10^{4}$e which could've been detected. No such difference was observed.
 	
-	Also, during a proton decay (which hasn't been observed),
+	Also, during a proton decay (which hasn't been observed), one of the possible outcomes can be
 		$$ p^+ \rightarrow e^+ + \pi^0 $$
 	if the charge of the positron was different from that of the proton, again charge conservation would be violated.
 	
@@ -43,6 +45,63 @@
 	\end{equation}
 	The $\hat{\textbf{r}}_{21}$ suggests that the direction of the force is along the line joining the two charges \textemdash it is a central force.\\
 	
-	1 esu or "electrostatic unit" is a Gaussian unit defined in a way that $k$ equals exactly one when  other quantities are measured in cgs. 1 Coulomb = $2.998 \times 10^9$ esu.
+	1 esu or "electrostatic unit" is a Gaussian unit defined in a way that $k$ equals exactly one when  other quantities are measured in cgs. 1 Coulomb = $2.998 \times 10^9$ esu.\\
 	
+	Important points to consider:
+	
+	\begin{enumerate}
+		\item The only way to measure electric charge is to observe the interactions of charged objects.
+		\item The force between two charged particles is unaffected by the presence of a third particle.
+		\item The principle of superposition doesn't hold at sub-microscopic level (due to quantum effects).
+		\item The inverse square ($1/r^2$) law for electric charges has been verified to extreme precision. If instead $1/r^2$ it had to be $1/r^{2+\delta}$, then $\delta$ has to be lower than one part in $10^{16}$
+		\item No system of stationary charges can be in equilibrium under the action of electric forces alone.
+		\item Coulomb's law doesn't take into account relativistic effects.
+	\end{enumerate}
+	
+	\section{Electrical Energy}
+	If we have a point charge $q_1$  fixed at its position and try to bring another charge $q_2$ close to it, we would have to do some work against the force between the particles. This work is stored as electrical potential energy and becomes the kinetic energy of the particle system when they are left free to move.\\
+	
+	We note that electrical potential energy exists for a particular configuration of charges \textemdash it's not the property of an individual charges. Potential energy of the system of N charges is given by
+	
+	$$ U = \frac{1}{2}\sum_{i=1}^{N} \sum_{j \neq i} \frac{1}{4\pi\epsilon_0 r_{ij}}q_i q_j $$
+	
+	Since each pair occurs twice in this series, we multiply by 1/2 to compensate for it.
+	
+	\section*{Electric Field}
+	An electric charge influences its surroundings. It assigns a local property to the space around it, assigning a value to each point. We define a vector function, called the charge's \textbf{electric field}. It is defined as the amount of force a particle with unit charge \footnote{Some authors suggest that we consider $q_O$ to be arbitrarily small so that it doesn't affect the field due to our source charge. Firstly, such a definition is not required if we consider just the influence of the source charge alone. Secondly, $q_0$ can't be smaller than $e$.} would experience if placed in a point under its influence.
+	
+	$$ \textbf{E} = \frac{\textbf{F}_e}{q_0}$$
+	
+	The idea may seem useless but it actually results in a profound simplification. If we know the net electric field at a given point in space, we can predict the behavior of any charge when placed at that point \textit{without} having the knowledge of what caused it.
+	
+	\subsection*{Field Singularities} An electric field singularity would be either be a point where the field strength tends to $\infty$ or a region where the field changes its magnitude or direction discontinuously.\\
+	
+	For example, as the electric field changes proportionately with $1/r^2$, as r $\rightarrow$ 0, \textbf{E} $\rightarrow$ $\infty$. But since we know that even elementary particles have a finite size, r cannot get arbitrarily small. Therefore, we can ignore this mathematical singuarity.
+	
+	\subsection*{Electric Flux}
+	For any vector field \textbf{v} and a surface with an areal vector \textbf{a} pointing perpendicular to the surface, \textbf{v.a} is then called the flux of \textbf{v} through the surface \textbf{a}. As a physical analogy: it is a measure of rate of flow of a fluid through a cross-section \textbf{a}.\\
+	
+	Consider any closed surface enclosing some electric charge. If we take an infinitesimally small fraction of the surface such that the areal vector has the same direction at each point on itself,
+	$$ d\phi = \textbf{E.dA}$$
+	gives the electric flux through the infinitesimal surface. If we sum the contributions of all such infinitesimal areas in the limit $dA \rightarrow 0$, the sum becomes a surface integral
+	$$ \phi = \oint\limits_{S}\textbf{E.dS}$$
+	
+	\subsection*{Gauss's law}
+	In the simplest case, let's consider a charge $q$ at the center of an imaginary sphere with radius $r$. The electric field at a point on that surface is
+
+	$$ \textbf{E} = \frac{q}{4\pi\epsilon_0 r^2} \hat{\textbf{r}} $$
+	
+		
+	$$ \oint\limits_{S}\textbf{E.dS} = E(4\pi r^2) =  \frac{q(4\pi r^2)}{4 \pi \epsilon_0 r^2}$$
+
+	
+	$$ \oint\limits_{S}\textbf{E.dS} = \frac{q}{\epsilon_0} $$
+	
+	We notice that the flux is independent of the size of the sphere. In fact, the flux is independent of the shape as well. I will now summarize some key points.\\
+	
+	\begin{itemize}
+		\item The law works even for irregular surfaces but we tend to use symmetrical surfaces because the the areal vector points radially outward, making a $0$ degree angle with \textbf{E}. So $\oint\limits_{S}\textbf{E.dS}$ becomes E$\cdot$S Also, it's easier to take a surface integral over them, as compared to irregular surfaces.
+	
+		\item Gauss's law and Coulomb's law aren't two independent concepts but different statements of the same thing. Coulomb's law lets us calculate electric field based on the magnitude of the charges while Gauss's law does the converse \textemdash it helps us calculate how much charge is contained, given the electric field over a closed surface
+	\end{itemize}
 \end{document}
