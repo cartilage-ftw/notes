@@ -1,7 +1,7 @@
 \documentclass{article}
 
 \usepackage[margin=1.0in]{geometry}
-
+\usepackage{amsmath}
 \author{Aayush Arya \\ (tomriddle257@gmail.com)}
 \title{Introduction to Ordinary Differential Equations}
 \begin{document}
@@ -41,7 +41,8 @@
 	$$ y = c_1x + c_2 $$
 	Which looks like the familiar equation $y = mx + c$. We note that these arbitrary constants can take up any value. So the equation doesn't represent 'a' straight line but a family of straight lines (of having all possible slope values and y-intercepts).
 	
-	\section*{Exact Differential Equations}
+	\section{Solving first order equations}
+	\subsection*{Exact Differential Equations}
 	An exact or total differential of a function $\psi(x,y)$ is one which shows the contribution of all independent variables for an infinitesimal change
 	\begin{equation}
 	d\psi = \frac{\partial\psi}{\partial x}dx + \frac{\partial\psi}{\partial y}dy
@@ -93,4 +94,72 @@
 	$$f'(y) = C$$
 	
 	which means $f(y)$ is some function of y alone.
+	
+	\subsection{First Order Linear Differential Equations}
+	These are a special case of inexact equations. The general form of these equations is
+		\begin{equation}
+	\label{lineareqn}
+	y'(x) + P(x)y = Q(x)
+	\end {equation}
+	These equations can be made exact by multiplying by a suitable integrating factor such that
+	
+	$$ \frac{d(\mu y)}{dx} = \mu Q(x)$$
+	and the solution is just
+	\begin{equation}
+	\boxed{\mu (x) y = \int \mu(x) Q(x)}
+	\end{equation}
+	$\mu$ can be calculated easily. If we multiply equation 
+	\ref{lineareqn} with $\mu(x)$
+	
+	$$ \frac{d(\mu y)}{dx} = \mu \frac{dy}{dx} + \mu (x) P(x) $$ 
+	which becomes
+	$$ \mu\frac{dy}{dx} + y\frac{d\mu}{dx} = \mu \frac{dy}{dx} + \mu (x) P(x) $$
+	simplifying gives
+	$$y\frac{d\mu}{dx} = \mu (x)P(x) $$
+	Rearranging and integrating gives 
+	\begin{equation*}
+		\boxed{\mu = e^{\int P(x)dx}}
+	\end{equation*}
+	\subsection{Homogenous equations}
+	An equation $f(x,y)=0$
+	\subsection{Special Forms}
+	If the equation is of the form $$yM(xy)dx + xN(xy)dy)$$
+
+then its integrating factor $\mu$ is given by
+
+$$ \mu = \frac{1}{M(xy) - N(xy)dy} $$
+
+\subsubsection{Example}
+The differential equation
+$$ y(1+xy)dx + x(1-xy)dy = 0$$
+has the integrating factor
+ $$ \mu = \frac{1}{Mx+ Ny} $$
+$$\mu = \frac{1}{xy + (xy)^2 + xy - (xy)^2} $$
+
+$$\mu = \frac{1}{2xy} $$
+
+Multiplying our equation with $\mu$ gives
+
+$$\frac{1}{2xy}\cdot \left(y(1+xy)dx + x(1-xy)dy\right) = 0 $$
+
+which can be written as
+
+$$\frac{(y + xy^2)dx + (x - x^2y)dy}{2xy} = 0 $$
+
+simplifying and integrating,
+
+
+$$ \int(\frac{1}{2x} + \frac{y}{2})dx + \int(\frac{1}{2y} + \frac{x}{2})dy = 0$$
+
+which is
+
+$$log(x) + \frac{y^2}{2} + log(y) + \frac{x^2}{2} = 0 $$
+
+which can be further condensed
+
+$$ log(xy)^2 + x^2 + y^2 = C$$
+
+or 
+
+$$ log(x^2y^2) + x^2 + y^2 = C$$
 \end{document}

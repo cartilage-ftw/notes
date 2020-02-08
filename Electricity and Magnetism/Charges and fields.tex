@@ -3,6 +3,8 @@
 \usepackage[margin=1.0in]{geometry}
 
 \usepackage{array,epsfig}
+\usepackage{esint}
+\usepackage{mathtools}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
@@ -104,4 +106,29 @@
 	
 		\item Gauss's law and Coulomb's law aren't two independent concepts but different statements of the same thing. Coulomb's law lets us calculate electric field based on the magnitude of the charges while Gauss's law does the converse \textemdash it helps us calculate how much charge is contained, given the electric field over a closed surface
 	\end{itemize}
+
+	\subsection{Laplace's and Poisson's Equations}
+		Since Gauss's law tells us
+		$$ \oint \textbf{E}.\textbf{dS} = \frac{q}{\epsilon_0} $$
+		We can rewrite this using Gauss's divergence theorem
+		
+		$$ \oiint \textbf{E}.\textbf{dS} = \iiint (\nabla . \textbf{E})dV = \frac{q}{\epsilon_0}$$
+		or,
+		\begin{equation}
+		\label{maxwellfirst}
+		\nabla . \textbf{E} = \frac{\rho}{\epsilon_0}
+		\end{equation}
+		which is Maxwell's first equation. Since electric fields are conservative,
+		$$ \nabla \times \textbf{E} = 0 $$
+		which implies that it should be possible to find a $\phi$ (potential function) such that,
+		$$ \textbf{E} = -\nabla\phi $$
+		
+		Then we can rewrite equation (\ref{maxwellfirst}) as
+		$$ - \nabla . \nabla\phi = \frac{\rho}{\epsilon_0}$$
+		or
+		$$\boxed{\nabla^2\phi = -\frac{\rho}{\epsilon_0}}$$
+		This is known as \textbf{Poisson's equation}. In a charge-free region, $\rho$ becomes 0 and the equation reduces to \textbf{Laplace's equation}.
+		
+		$$\boxed{\nabla^2\phi = 0}$$
+		
 \end{document}
