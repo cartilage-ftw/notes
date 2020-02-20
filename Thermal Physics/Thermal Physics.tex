@@ -128,4 +128,50 @@
 	Dividing by dT on both sides gives us,
 	
 	$$ \frac{dQ}{dT} = \left(\frac{\partial U}{\partial T}\right)_V + \left(\left(\frac{\partial U}{\partial V}\right)_T + p\right)\frac{dV}{dT}$$
+	
+	\section{Measuring the Entropy of a system}
+	We've learnt different statements of the second law of thermodynamics and how they are equivalent. We've seen how it introduces the concept of entropy and suggests that spontaneously, the entropy of a system can only increase. But how does one measure the entropy of a system?
+	
+	One way to measure the entropy would be to rely on other well-defined macroscopic properties of a system. For example, let's take the heat capacity at constant pressure. \footnote{It should be noted that one could take any other quantity, including heat capacity at constant volume.}
+	
+	$$C_p = T\left(\frac{\partial S}{\partial T}\right)_p $$
+	This gives us
+	$$ S = \int\frac{C_p}{T}dT $$
+	By writing entropy as an indefinite integral, we run into the requirement of an arbitrary constant of integration. If we could write it as a definite integral from some reference temperature $T_0$ to $T$
+	
+	$$ S(T) = S(T_0) + \int_{T_0}^{T}\frac{C_p}{T}dT$$
+	
+	there's still another problem. We need the value of entropy at that reference point. The third law of thermodynamics gives us precisely that for one particular reference point: \textit{absolute zero}
+	
+	\section{Statements of the Third Law of Thermodynamics}
+	After looking at experimental data of electrochemical cell reactions and chemical thermodynamics experiments, Nernst saw a striking pattern in the change in enthalpy and change in the Gibbs' function.
+	
+	We know that $G = H - TS$.
+	For a system in internal equilibrium, such that the temperature is practically constant,
+	
+	$$ \Delta G = \Delta H - T\Delta S $$
+	
+	As temperatures were decreased, not only did $\Delta G$ and $"\Delta H$ become closer, they approached each other asymptotically. On the basis of this, Nernst postulated that as $T \rightarrow 0$, $\Delta S$ should approach $0$. Thus, in 1906, he remarked that\\
+	
+	\noindent\fbox{
+		\parbox{\textwidth}{\textbf{Nernst's Statement:} Near absolute zero, all reactions in a system in internal equilibrium take place with no change in entropy.}
+	}\\
+
+	Max Planck gave a more generalized statement by making a further hypothesis. Although it was motivated by the idea of perfect crystals, it is believed to hold for any system.\\
+	
+	\noindent\fbox{
+	\parbox{\textwidth}{\textbf{Planck's Statement:} The entropy of all systems in internal equibrlium is the same, which may be taken as zero.}}\\
+	
+	where the choice of zero was further motivated by the development of statistical mechanics. From the statistical definition of entropy $S = k_B ln(\Omega)$, zero entropy at absolute zero temperature means $\Omega = 1$ where $\Omega$ is the number of microstates in a macrostate. That is, there is only one possible microscopic configuration for the system. Thus when a system finds its ground state at absolute zero, zero entropy means that this ground state is non-degenerate.
+	
+	For the third law to hold, the system must be in internal equilibrium (every part of it must be in equilibrium with the rest of the parts). $^4He$ and $^3He$ remain liquid even at near zero Kelvin temperatures. Electrons in a metal can be treated as a gas even upto $T=0$. Both of these systems will follow the third law. A system that is not in internal equilibrium would be glass that has frozen-in disorder. However, since the lowest energy phase in a solid is the perfect crystal and the glass phase is higher energy level, the glass will eventually turn to a perfect crystalline phase. But the process is incredibly slow (the idea that cathedral mirror glasses have flown in the past centuries has been debunked).
+	
+	We now point out a limitation of Planck's statement. If a system contains N spinless atoms with each nucleus having angular momentum quantum number I, the degeneracy of each nucleus is $2I+1$. If $I>0$, the degeneracy won't be one and entropy would be $S = Nk_Bln(2I+1)$. This is resolved as follows:\\
+	
+	In internal equilibrium, each part of the system interacts and exchanges energy with other parts. Each nucleus, due to the nuclei surrounding it, experiences a tiny but non-zero magnetic field. This leads to the collective excitation of nuclear spins and this increases the degeneracy. The corresponding nuclear spin waves, at the lowest energy level will occupy the highest wavelength. If the nuclei are cooled sufficiently (which requires an extremely low temperature), the nuclei can be forced to occupy only the longest-wavelength mode such that the entropy of the nuclear spin system is zero.\\
+	
+	But even if we cool the nuclei enough, there will be residual entropy due to the interactions of the individual nucleons. Each of the subsystem (electrons, nuclei, etc.) is very weakly coupled with each other. We need to cool enough so that the entropy of individual subsystems tends to zero. Francis Simon called each of these subsystems "aspects" and his more refined statement of the third law is as follows:\\
+	
+	\noindent\fbox{
+	\parbox{\textwidth}{\textbf{Simon's Statement:} The contribution to the entropy of a system by each aspect of the system wich is in internal thermodynamic equilibrium tends to zero as $T \rightarrow 0$.}}
 \end{document}
