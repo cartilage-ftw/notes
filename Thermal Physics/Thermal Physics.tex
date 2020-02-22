@@ -16,7 +16,7 @@
 
 \title{Thermal Physics}
 \author{Aayush Arya\\ (tomriddle257@gmail.com)}
-
+\date{Last Updated: \today}
 \begin{document}
 	
 	\maketitle
@@ -128,6 +128,35 @@
 	Dividing by dT on both sides gives us,
 	
 	$$ \frac{dQ}{dT} = \left(\frac{\partial U}{\partial T}\right)_V + \left(\left(\frac{\partial U}{\partial V}\right)_T + p\right)\frac{dV}{dT}$$
+	
+	\section{Thermodynamic Definition of Entropy}
+	Since we have established that $$\oint \frac{\dbar Q}{T} = 0$$ we immediately see that the integral on the left hand side of the equation
+	
+	$$ \int_{A}^{B}\frac{\dbar Q}{T} = S(B) - S(A)$$
+	is path independent. Although $\dbar Q$ itself is an inexact differential, the fraction $\frac{\dbar Q}{T}$ is, by the above argument, an exact differential and hence can be used as a function of state. We assign the variable S the name "\textit{entropy}".
+	
+	In the case of an adiabatic (reversible adiathermal) process, where $\dbar Q = 0$, change in entropy is zero. Therefore, adiabatic proccesses are \textit{isentropic}.
+	
+	\section{Another View of the Second Law}
+	Consider a system undergoing a cyclic process which has two sections; a reversible portion $A \rightarrow B$ and an irreversible $B \rightarrow A$ portion. From Clausius' inequality, we know that the total change in entropy
+	$$ \oint \frac{\dbar Q_{total}}{T} \leq 0 $$
+	which can be expanded in the form
+	$$ \int_{A}^{B}\frac{\dbar Q_{rev}}{T} + \int_{B}^{A}\frac{\dbar Q}{T} \leq 0 $$
+	or,
+	$$\int_{A}^{B}\frac{\dbar Q_{rev}}{T} - \int_{A}^{B}\frac{\dbar Q}{T} \leq 0 $$
+	rearranging gives,
+	$$ \int_{A}^{B}\frac{\dbar Q_{rev}}{T} \leq \int_{A}^{B}\frac{\dbar Q}{T}$$ 
+
+	The equality holds trivially in the case when the second process from $B\rightarrow A$ is actually reversible.
+	
+	For a thermally isolated system, $\dbar Q_{rev} = 0$ for any process and so the inequality becomes
+	
+	$$dS \geq 0 $$
+	
+	If the universe is treated as an isolated system, the first two laws of thermodynamics tell us\\
+	
+	\indent(i) The total energy content of the universe is constant.\\
+	\indent(ii) The entropy of the universe tends to a maximum.
 	
 	\section{Measuring the Entropy of a system}
 	We've learnt different statements of the second law of thermodynamics and how they are equivalent. We've seen how it introduces the concept of entropy and suggests that spontaneously, the entropy of a system can only increase. But how does one measure the entropy of a system?
