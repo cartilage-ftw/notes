@@ -1,0 +1,76 @@
+\documentclass{article}
+\title{Magnetic Fields}
+\author{Aayush Arya\\\ (tomriddle257@gmail.com)}
+%\thanks{Email: tomriddle257@gmail.com}
+\begin{document}
+	\maketitle
+	We have a working theory for static electric fields, but what happens if the charges are moving? How are the observations made by observers in different frames of reference related?
+	
+	The development of special relativity began with problems in electrodynamics. Einstein's landmark 1905 paper was titled "On the Electrodynamics of Moving Bodies". Lorentz had led himself very close to the final formulation by Einstein.\\
+	
+	We expect any physical theory to be relativistically invariant. It should give same results in all inertial reference frames. Maxwell's electromagnetic theory, atlhough developed long before relativity was invented, is a relativistically invariant theory of electromagnetism.
+	
+	It turns out that special relativity formulae could actually be derived without the need of considering the constancy of the speed of light at all\footnotetext{To measure the speed of light, one needs to simply measure three smaller velocities $v$, $v_1$, and $v_2$ in the formula $$ v = \frac{v_1 + v_2}{1 + v_1v_2/c^2} $$}. To derive them, we need two basic assumptions: (1) the equivalence of reference frames, and (2) the space is isotropic \textemdash every point in space is identical and there is no preferred direction.
+	
+	%\section{Oerested's experiments}
+	Moving charges are called currents. While lecturing at the University of Copenhagen, Hans Christian Oerested in 1819-20 experimented running a galvanic current perpendicular to a compass needle free to move in the horizontal plane. The needle was deflected.
+	
+	%\section{Magnetic Forces}
+	The forces that arise due to currents or moving charged particles are called "magnetic forces". The Lorentz force on a moving charged particle is given as $$ \vec{F} = q(\vec{E} + \vec{v}\times\vec{B}) $$
+	
+	\section{Relativistic Invariance of Charge}
+	The $\vec{B}$ field is a consequence of relativistic effects. It arises as a natural consequence if charges are to follow the postulates of special relativity.\\
+	That being said, we must ask "Does motion affect charge on a particle?". To answer this, we need ot know how to measure the charge of a moving particle. We need to figure out if the force by a moving charged particle $Q_1$ on a particle $Q_2$ then depends on the direction from $Q_1$ to $Q_2$ and/or if the directioun of force is radial or not.
+	
+	To allow for the second possibility, we need to figure out if $\vec{F_r}$ is different for different for different test charges equidistant but placed at different angular positions. We can then find $Q$ as some sort of average from this set of $\vec{F_r}$\\
+	
+	We consider a large number of test charges (each with charge q) on the surface of a sphere with arbitrary radius. We measure $\vec{F_r}$ for each test charge as Q passes through the center of the sphere. The measurements should be made simultaneosly by synchronized clocks that are local to the frame $F$ in which the sphere is stationary. This si equivalent to trying to measure $\vec{E}$ on the surface of the sphere. For a static charge, we can use Gauss's law and write
+	
+	$$ \oint_S \vec{E}\cdot dA = \frac{Q}{\epsilon_0} $$
+
+which could help us define charge $Q$ as
+ 
+ $$ Q = \epsilon_0\oint_S E\cdot dA$$
+ 
+ But how do we know that Gauss's law holds for even moving charges? The agreement of our field theory for electromagnetism is evidence that it does indeed hold for moving charges.
+ 
+ \section{Experimental Evidence for Charge Invariance}
+ We know that deuterium molecules are perfectly neutral. The helium atom consists of the same amount of charge but the protons in a $He$ nucleus have kinetic energy in the range of $1 MeV$. This could have affected the charge on the individual protons. However, experiments have established that Helium atoms are as neutral as $D_2$ molecules upto a precision of 1 part in $10^{20}$.\\
+ Other lines of evidence include the fact that different isotopes of the same element have exactly the same optical spectrum. Using a similar argument, relativistic variance of mass can be confirmed.\\
+ 
+ As mass varies, so does the energy. In the terminology of special relativity, energy is a component of a four-vector while charge is a scalar (an invariant under Lorentz transformations).
+ 
+ \section{Transformation of the $\vec{E}$ field}
+If charge is to be invariant, $\vec{E}$ must transform in a particular way to preserve thsi symmetry. We discuss this possibility by first considering a special case in which we can theoretically expect transformation of $\vec{E}$ in a way that can be generalized.\\
+
+
+We consider two square sheets with sides 'b' with equal and opposite charges distrubuted with a uniform charge densities $+\sigma$ and $-\sigma$, aligned in a way that the $\vec{E}$ points towards the z-axis. Distance between the two plates is kept small so that the $\vec{E}$ field between them is practically uniform.
+
+We will observe this system from two different frames of reference. In frame $F$ in which these charged paltes are stationary, the eelctric field due to the pair of plates, which is towards the +z direction, canbe calculated from Gauss's law, which gives the following result
+$$ E_z = \frac{\sigma}{\epsilon_0}$$
+
+We now consider the system in a frame $F'$ moving with velocity $V$ with respect to the frame $F$ in the +x direction. Due to Lorentz contraction, the side of the sheets along this direciton shrinks by a factor of 1/$\gamma$ or $\sqrt{1-\beta^2}$. The length of this side thus becomes $b\sqrt{1-\beta^2}$
+
+but if the total charge on the plate is invariant, the charge demsoty ,ist be greater when measured in frame $F'$
+
+$$ \sigma' = \frac{\sigma}{\sqrt{1-v^2/c^2}} = \gamma\sigma$$
+and, from Gauss's law
+$$ E_z' = \frac{\sigma'}{\epsilon_0} = \gamma\frac{\sigma}{\epsilon_0} = \gamma E_z $$
+
+We now consider a different situation in which the $\vec{E}$ field is along the direction of relative motion of the frames\\
+
+An observer in frame F' observes the distance between the plates to be slightly smaller, while the dimensions of the plates remain unaffected. This doesn't affect the value of the field between these plates.\\
+
+A natural question now arises: if "field" is a universal concept, then ae such transformations expected irrespective of the nature of the sources? (What ever the sources may be, parallel plates or any kind of charge distributions or even point charges).
+
+If the idea of an $\vec{E}$ field at a particular spacetime coordinate had a universal meaning, this has to be the case. We ought to be able to predict, after having measured $\vec{E}$ in one frame, the value that an observer in a different frame would measure from our measurement of $\vec{E}$ and knowledge of the relativistic translation between the reference frames alone.\\
+
+Whatever the field may be in frame $F$, we should be able to treat it as a superpostion of $E_x$, $E_y$ and $E_z$ and predict $\vec{E'}$. So, we come across the generalizations
+
+\begin{eqnarray}
+E_{||}' = E_{||}
+E_{\perp}' = \gamma E_{\perp}
+\end{eqnarray}
+
+We note that in the above cases, since $E_y$ is also a perpendicular component, $E_y' = \gamma E_y$ holds too, albeit trivially, since $E_y = 0$.
+\end{document}
