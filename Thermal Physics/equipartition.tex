@@ -1,0 +1,58 @@
+\documentclass{article}
+\title{Equipartition of Energy}
+\date{\today}
+\author{Aayush Arya\footnote{tomriddle257@gmail.com}}
+
+\newcommand{\f}[2]{\frac{#1}{#2}}
+
+\begin{document}
+	\maketitle
+
+	\section{Equipartition theorem}
+	Imagine an oscillating block tied to a spring. This system has total energy $$ E(x,v_x) = \frac{1}{2}kx^2 + \frac{1}{2}mv_x^2$$
+	You can see that this energy's dependence is quadratic in $x$ and $v_x$. Such quadratic terms in energy expressions are encountered frequently and one property arising due to this pattern is \textit{equipartition}.\\
+	
+	Imagine a thermodynamical system that is in contact with a heat bath (or reservoir). The system is allowed to exchange energy with its surroundings but its temperature is fixed to the temperature of the heat reservoir and matter is not allowed to come in or out of the system. Such a system can be described by a \textit{canonical ensemble} or an \textit{NVT ensemble}.\\
+	
+	A physical example of this system could be an individual molecule in a container full of other gas molecules \textemdash the molecule in context has little energy compared to the sum of energies of rest of the molecules in the container (which can thus be treated as a heat reservoir). Energy in such an ensemble is Boltzmann distributed and is thus proportional to $e^{-\beta\Delta E}$, where $\beta \equiv  \frac{1}{k_B T}$.\\
+	Let us assume that its energy is dependent on some $n$ independent quadratic terms
+	
+	$$ E = \sum_{i=1}^{n}\alpha_ix_i^2$$
+	
+	Since the energy is Boltzmann distributed, probability of a variable $x_i$ taking a particular value between $x_i$ and $x_i + dx_i$
+	
+	$$ P(x_i) \propto e^{-\beta \alpha_i x_i^2}$$
+	Normalizing gives
+	$$ P(x_i) = \frac{e^{-\beta\alpha_i x_i}}{\int_{-\infty}^{\infty} e^{-\beta\alpha_i x_i} dx_i}$$
+	The probability of $n$ indepdent variables $x_1, x_2, .. x_n$ taking up particular values would be
+	
+	$$ P(x_1, x_2, .. x_n) = \left(\frac{e^{-\beta\alpha_1 x_1}}{\int_{-\infty}^{\infty} e^{-\beta\alpha_1 x_1} dx_1}\right) \left(\frac{e^{-\beta\alpha_2 x_2}}{\int_{-\infty}^{\infty} e^{-\beta\alpha_2 x_2} dx_2}\right) ... \left(\frac{e^{-\beta\alpha_n x_n}}{\int_{-\infty}^{\infty} e^{-\beta\alpha_n x_n} dx_n}\right) $$
+	which can be simplified using summation and product notation as
+	$$ P(x_1, x_2, .. x_n) =  \frac{e^{-\beta (\sum_{i=1}^{n} \alpha_i x_i)}}{\int_{-\infty}^{\infty} ... {\int_{-\infty}^{\infty} e^{-\beta (\sum_{i=1}^{n} \alpha_i x_i)}} \Pi_{i=1}^{n}dx_i}$$
+	
+	The average value of the total energy of the system should then be
+	 $$ \langle E \rangle = \int_{-\infty}^{\infty}...\int_{-\infty}^{\infty} E.P(x_1, x_2,..,x_n) dx_1 dx_2... dx_n  $$
+	 substituting $P$ and $E = \sum_{i=1}^{n}\alpha_ix_i^2$ and simplifying using product notation
+	
+	
+	$$ \langle E \rangle =  
+		\frac{\int_{-\infty}^{\infty} ... {\int_{-\infty}^{\infty}
+				 (\sum_{j=1}^{n} \alpha_j x_j^2) e^{-\beta (\sum_{i=1}^{n} \alpha_i x_i)}\Pi_{i=1}^{n}dx_i}}
+		{\int_{-\infty}^{\infty} ... {\int_{-\infty}^{\infty} e^{-\beta (\sum_{i=1}^{n} \alpha_i x_i)}} \Pi_{i=1}^{n}dx_i} $$
+	
+	Now, between the numerator and denominator, most of the integrals cancel out and we're left with
+	
+	$$ \langle E \rangle = \sum_{i=1}^{n} \frac{
+			\int_{-\infty}^{\infty}\alpha_i x_i^2 e^{-\beta \alpha_i x_i^2} dx_i}{\int_{-\infty}^{\infty} e^{-\beta \alpha_i x_i^2} dx_i} 
+		$$
+		
+	which, if you notice, is a sum of \\
+	
+	$$ \langle E \rangle = \langle E_1 \rangle + \langle E_2 \rangle...  + \langle E_n \rangle $$
+	which implies that the average total energy of the system is the sum of the average of individual quaratic terms.
+	Since the energy of our system is dependent on $n$ different quadratic terms, we say it has $n$ (quadratic) modes or \textit{degrees of freedom}. Evaluating the Gaussian integral gives an even more surprising result
+	
+	$$ \langle E \rangle = \sum_{i=1}^{n} \f{1}{2}k_B T $$
+	
+	Physically, this means that average energy corresponding to each degree of freedom is exactly equal. It should be emphasized that it doesn't depend on the nature of $\alpha_i$ or $x_i$  and is dependent only on the temperature!
+\end{document}
