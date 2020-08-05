@@ -1,0 +1,57 @@
+\documentclass{article}
+
+\usepackage{geometry}[a4paper, margin=2in]
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\hypersetup{urlcolor=blue, colorlinks=true}
+
+\newcommand{\f}[2]{\frac{#1}{#2}}
+\newcommand{\D}[2]{\frac{d#1}{d#2}}
+\newcommand{\DD}[2]{\frac{d^2 #1}{d {#2}^2}}
+\title{Vibrations and Harmonic Oscillations}
+\author{Aayush Arya}
+\date{(Last Updated: \today)}
+
+\begin{document}
+	
+\maketitle
+
+{
+	\hypersetup{linkcolor=black}
+	\tableofcontents
+}
+
+\section{Introduction}
+The study of vibrations and waves is so central to physics because wave phenomena can arise in virtually every physical scenario, from ripples in water to vibrations in a quartz crystal to gravitational waves. All these waves have one characteric in common \textemdash periodicity.
+
+We will confine our discussion to primarily one type of periodic motion: harmonic motion, in which the disturbance in the concerned physical quantity makes it oscillate sinusoidally. This may apparently sound like constraining our study to a very narrow range of phenomena but it isn't so due to two reasons:
+
+\begin{itemize}
+	\item Many systems that otherwise aren't simple harmonic behave so in the special case when the displacement in the physical quantity in context is small
+	\item According to a theorem by Joseph Fourier (1807), all periodic waves can be written as a converging summation series of infinite harmonic terms.
+\end{itemize}
+
+We begin with one of the most trivial examples in the study of harmonic motion: the simple case of a single block attached to a spring fixed to a wall.
+
+	\subsection{Block on a spring}
+	This type of system can be described by the differential equation of motion
+	$$ m\DD{x}{t} = -(k_1x + k_2x^2 + ... + k_nx^n) $$
+	For small displacements $x$, the system can be assumed to behave linearly. It should be emphasized that the assumption of linearity is only an approximation. The equation thus reduces to a second-order ordinary linear differential equation
+	
+	$$ m\DD{x}{t} + k_1x = 0 $$
+	
+	Solving this equation is rather trivial and it can be easily verified that it satsfies the solution
+	
+	$$ x = Asin(\omega t + \phi)$$
+	where $ \omega = \sqrt{\f{k_1}{m}}$ .
+	This equation corresponds to a sine curve with amplitude $A$ in the $x-t$ plane ranging from $ -\infty < x < \infty $. However, any \textit{physical} vibration would be recorded in a given time interval. If the oscillation begun at $t=t_1$ and ended at $t=t_2$ then we must impose the following initial and boundary conditions
+	
+	$$ x = \begin{cases}
+	0 & -\infty < x < t_1\\
+	Asin(\omega t + \phi) & t_1 \leq x \leq t_2\\
+	0 & t_2 < x < \infty
+	\end{cases}$$
+
+	The description of a \textit{physical} harmonic oscillator requires such conditions to be imposed on the mathematical solution. It should be noted that any real vibration appears to be simple harmonic only in the case when it occurs for a large number of time periods. This is again a problem of Fourier analysis and will be discussed later. Still, it should be noted that the simple harmonic picture can be used to describe the system only in the \textit{steady state}.
+\end{document}
